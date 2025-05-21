@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Форма регистрации</title>
+  </head>
+  <body>
+    <form action="/" method="POST">
+      {{ form.hidden_tag() }} 
+      {{ form.username.label(class ="form-label") }}
+      {{ form.username(class ="form-control") }} 
+      {% for error in form.username.errors %}
+      <div id="error"> {{ error}}</div>
+      {% endfor %}
+
+
+     
+      {{ form.email.label(class ="form-label") }}
+      {{ form.email(class ="form-control") }} 
+      {% for error in form.email.errors %}
+      <div id="error"> {{ error}}</div>
+      {% endfor %}
+
+
+
+      {{ form.password.label(class ="form-label")}}
+      {{ form.password(class ="form-control")}} 
+      {% for error in form.password.errors %}
+      <div id="error"> {{ error}}</div>
+      {% endfor %}
+
+
+      {{ form.confirm_password.label(class ="form-label")}}
+      {{form.confirm_password(class ="form-control")}} 
+      {% for error in form.confirm_password.errors %}
+      <div id="error"> {{ error}}</div>
+      {% endfor %}
+
+      {{ form.submit(class="btn") }}
+
+
+    </form>
+  </body>
+</html>
